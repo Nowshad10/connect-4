@@ -15,10 +15,33 @@ import {
     FormHelperText,
     Input
   } from '@chakra-ui/react';
+import { useRecoilState } from 'recoil';
+import { playerOneColour, playerOneName, playerTwoColour, playerTwoName } from 'state';
 
 const SettingsButton: FC = () => {
     const { isOpen, onOpen, onClose } = useDisclosure();
-    
+
+    const [playerOneNameRecoil, setPlayerOneNameRecoil] = useRecoilState(playerOneName);
+    const [playerOneColourRecoil, setPlayerOneColourRecoil] = useRecoilState(playerOneColour);
+    const [playerTwoNameRecoil, setPlayerTwoNameRecoil] = useRecoilState(playerTwoName);
+    const [playerTwoColourRecoil, setPlayerTwoColourRecoil] = useRecoilState(playerTwoColour);
+
+    const playerOneNameHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setPlayerOneNameRecoil(e.target.value);
+    };
+
+    const playerOneColourHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setPlayerOneColourRecoil(e.target.value);
+    };
+
+    const playerTwoNameHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setPlayerTwoNameRecoil(e.target.value);
+    };
+
+    const playerTwoColourHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setPlayerTwoColourRecoil(e.target.value);
+    };
+
     return (
         <>
             <Button onClick={onOpen} rightIcon={<MdBuild/>} colorScheme='cyan' variant='solid'>
@@ -36,15 +59,15 @@ const SettingsButton: FC = () => {
                     <ModalBody>
                         <FormControl>
                             <FormLabel>Player 1 name</FormLabel>
-                            <Input type='text' />
+                            <Input onChange={playerOneNameHandler} type='text' />
                             <FormLabel>Player 1 Colour:</FormLabel>
-                            <Input type='text' />
+                            <Input onChange={playerOneColourHandler} type='text' />
                             <FormHelperText>You can type any colour, or enter its hex/rgb value.</FormHelperText>
                             <br/>
                             <FormLabel>Player 2 name</FormLabel>
-                            <Input type='text' />
+                            <Input onChange={playerTwoNameHandler} type='text' />
                             <FormLabel>Player 2 Colour</FormLabel>
-                            <Input type='text' />
+                            <Input onChange={playerTwoColourHandler} type='text' />
                             <FormHelperText>You can type any colour, or enter its hex/rgb value.</FormHelperText>
                         </FormControl>
                     </ModalBody>
@@ -53,7 +76,7 @@ const SettingsButton: FC = () => {
                         <Button colorScheme='red' variant='outline' mr={3} onClick={onClose}>
                             Close
                         </Button>
-                        <Button colorScheme='green' variant='solid'>
+                        <Button onClick={onClose} colorScheme='green' variant='solid'>
                             Save
                         </Button>
                     </ModalFooter>

@@ -16,3 +16,23 @@ export const gameOverState = atom<boolean>({
   key: "gameOverState",
   default: false,
 });
+
+export const playerOneName = atom<String>({
+  key: "playerOneName",
+  default: 'Player 1'
+});
+
+export const playerOneColour = atom<String>({
+  key: "playerOneColour",
+  default: '#f10000'
+});
+
+export const playerTwoName = atom<String>({
+  key: "playerTwoName",
+  default: 'Player 2'
+});
+
+export const playerTwoColour = atom<String>({
+  key: "playerTwoColour",
+  default: '#ece100'
+});
