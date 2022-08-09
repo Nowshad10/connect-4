@@ -13,7 +13,6 @@ const GameProgress: FC = () => {
   const p2colour = useRecoilValue(playerTwoColour);
   const name = player === 1 ? p1name || playerName[player] : p2name || playerName[player];
   const colour = player === 1 ? p1colour || playerColor[player] : p2colour || playerColor[player];
-  console.log(colour);
 
   return (
     <Heading as="h3" size="lg" color={colour.toLowerCase()}>

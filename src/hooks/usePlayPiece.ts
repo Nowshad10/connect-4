@@ -26,7 +26,7 @@ const diagonalWinCheck = (pieceCol: number, pieceRow: number, lastPlayed: number
       arr.push(lastPlayed[i][j] || 0)
     };
   };
-
+  
   return testWin(arr);
 }
 

@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Mouse+Memoirs&display=swap');
+
+#main-heading {
+    font-family: 'Mouse Memoirs', sans-serif;
+    font-size: 60px;
+}
+
+#connect {
+    color: red;
+}
+
+#four {
+    color: rgb(228, 228, 18);
+}

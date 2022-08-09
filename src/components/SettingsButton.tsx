@@ -59,15 +59,15 @@ const SettingsButton: FC = () => {
                     <ModalBody>
                         <FormControl>
                             <FormLabel>Player 1 name</FormLabel>
-                            <Input onChange={playerOneNameHandler} type='text' />
+                            <Input onChange={playerOneNameHandler} placeholder='Enter player 1 name...' type='text' />
                             <FormLabel>Player 1 Colour:</FormLabel>
-                            <Input onChange={playerOneColourHandler} type='text' />
+                            <Input onChange={playerOneColourHandler} placeholder='Please enter a valid colour here...' type='text' />
                             <FormHelperText>You can type any colour, or enter its hex/rgb value.</FormHelperText>
                             <br/>
                             <FormLabel>Player 2 name</FormLabel>
-                            <Input onChange={playerTwoNameHandler} type='text' />
+                            <Input onChange={playerTwoNameHandler} type='text' placeholder='Enter player 2 name...'/>
                             <FormLabel>Player 2 Colour</FormLabel>
-                            <Input onChange={playerTwoColourHandler} type='text' />
+                            <Input onChange={playerTwoColourHandler} type='text' placeholder='Please enter a valid colour here...'/>
                             <FormHelperText>You can type any colour, or enter its hex/rgb value.</FormHelperText>
                         </FormControl>
                     </ModalBody>
