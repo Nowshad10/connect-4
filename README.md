@@ -30,3 +30,12 @@ We have created a very simple Connect 4 game using some of our favorite [front-e
 - React Testing Library
 - [Chakra UI](https://chakra-ui.com/docs/components)
 - [RecoilJS](https://recoiljs.org/)
+
+## Changelog
+
+- [x] Added some unit tests to check diagonal win logic.
+- [x] Created function `diagonalWinCheck` in the file `src/hooks/usePlayPiece.ts` that handles the logic for players being able to win with 4 in a row diagonally in any direction.
+- [x] Implemented functionality for players to be able to choose their name and colour.
+    - [x] Created component called `SettingsButton` that opens up a modal with a controlled form that takes in user inputs for name/colour.
+    - [x] Added states for each players name and colour using Recoil atoms.These states are then changed when a player inputs something in the form for the name and colour.
+    - [x] Added a 'End Session' button that reverts the state of the players' names and colours back to the default values.
